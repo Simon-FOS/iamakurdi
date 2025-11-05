@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Resources - Augustinian Institute, Makurdi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #26308e;
+            --white: #ffffff;
+            --grey: #d3d3d3;
+            --dark-grey: #555;
+            --light-blue: #eef0ff;
+            --dark-blue: #1a236e;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* ===== HEADER SECTION ===== */
+        .main-header {
+            background-color: var(--primary-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container img {
+            height: 90px;
+            width: auto;
+            background-color: var(--white);
+            border-radius: 4px;
+            padding: 4px;
+            object-fit: contain;
+        }
+
+        .institute-title {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .institute-title h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: var(--white);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .institute-title p {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            margin-bottom: 0;
+        }
+        
+        /* Navigation */
+        .main-navbar {
+            background-color: var(--dark-blue);
+            padding: 0;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--grey);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            width: 0;
+            height: 3px;
+            background-color: var(--white);
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: calc(100% - 40px);
+        }
+        
+        .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 5px 10px;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Dropdown Menu */
+        .dropdown-menu {
+            background-color: var(--dark-blue);
+            border: none;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dropdown-item {
+            color: var(--white);
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--grey);
+        }
+        
+        .dropdown-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Section */
+        .eresources-hero-section {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(38, 48, 142, 0.7), rgba(38, 48, 142, 0.5)), url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .eresources-hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .eresources-hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .eresources-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+        
+        /* E-Library Section */
+        .elibrary-section {
+            background-color: var(--light-blue);
+        }
+        
+        .resource-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Databases Section */
+        .databases-section {
+            background-color: var(--white);
+        }
+        
+        .database-card {
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            padding: 25px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .database-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .database-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        /* Learning Platforms Section */
+        .platforms-section {
+            background-color: var(--light-blue);
+        }
+        
+        .platform-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .platform-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Research Tools Section */
+        .research-section {
+            background-color: var(--white);
+        }
+        
+        .tool-card {
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            padding: 25px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        /* Quick Access Section */
+        .quickaccess-section {
+            background-color: var(--light-blue);
+        }
+        
+        .access-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .access-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .access-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        /* Support Section */
+        .support-section {
+            background-color: var(--white);
+        }
+        
+        .support-card {
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .support-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: #1a1a2e;
+            color: var(--white);
+            padding-top: 60px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-blue);
+            width: 20px;
+        }
+        
+        .useful-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .useful-links li {
+            margin-bottom: 10px;
+        }
+        
+        .useful-links a {
+            color: var(--grey);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .useful-links a:hover {
+            color: var(--white);
+        }
+        
+        .newsletter p {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            color: var(--grey);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        
+        /* Badge Styling */
+        .badge-new {
+            background-color: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .institute-title h1 {
+                font-size: 1.7rem;
+            }
+            
+            .logo-container img {
+                height: 80px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .institute-title h1 {
+                font-size: 1.5rem;
+            }
+            
+            .institute-title p {
+                font-size: 0.8rem;
+            }
+            
+            .logo-container img {
+                height: 70px;
+            }
+            
+            .header-buttons {
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            .eresources-hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .eresources-hero-content p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Left Logo -->
+                    <div class="col-md-3 col-4">
+                        <div class="logo-container">
+                            <img src="static/images/ailogo.png" alt="Augustinian Institute Logo" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="col-md-6 col-12 text-center my-2 my-md-0">
+                        <div class="institute-title">
+                            <h2>Augustinian Institute, Makurdi</h2>
+                            <p>(Affiliate of Rev. Fr. Moses Orshio Adasu University, Makurdi)</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Logo -->
+                    <div class="col-md-3 col-4 text-end">
+                        <div class="logo-container">
+                            <img src="static/images/mologo.png" alt="Rev. Fr. Moses Orshio Adasu University Logo" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="navbar navbar-expand-lg main-navbar" aria-label="Primary Navigation">
+            <div class="container">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="academics.html" id="academicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Academics
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+                                <li><a class="dropdown-item" href="academics.html#department">Department of Philosophy</a></li>
+                                <li><a class="dropdown-item" href="academics.html#programmes">Academic Programmes</a></li>
+                                <li><a class="dropdown-item" href="academics.html#courses">Course Structure</a></li>
+                                <li><a class="dropdown-item" href="academics.html#admission">Admission Requirements</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="e-resources.html">E-Resources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-primary text-white px-4 py-2" style="background-color: #0056b3; border-color: #004a9f;">
+                            Portal
+                        </a>
+                        <a href="#" class="btn btn-outline-light px-4 py-2" style="color: #0056b3; border: 2px solid #0056b3;">
+                            E-Library
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- E-Resources Hero Section -->
+    <section class="eresources-hero-section">
+        <div class="eresources-hero-content">
+            <h2>Digital Learning Resources</h2>
+            <p>Access a world of knowledge with our comprehensive e-resources collection</p>
+        </div>
+    </section>
+
+    <!-- E-Library Section -->
+    <section id="elibrary" class="elibrary-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Digital Library Resources</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>E-Books Collection</h3>
+                        <p>Access thousands of digital books covering philosophy, theology, ethics, and related disciplines.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li>• Over 10,000 philosophy e-books</li>
+                            <li>• Academic and reference texts</li>
+                            <li>• Multiple format options</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Browse E-Books</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3>E-Journals</h3>
+                        <p>Access to premium academic journals and periodicals in philosophy and related fields.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li>• 500+ subscribed journals</li>
+                            <li>• Current and archival issues</li>
+                            <li>• Full-text access</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Access Journals</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Theses & Dissertations</h3>
+                        <p>Digital repository of student theses, dissertations, and research projects.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li>• Complete digital archive</li>
+                            <li>• Searchable database</li>
+                            <li>• Download options</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Browse Repository</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="card border-0 shadow">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">Library Access Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Access Instructions</h5>
+                                    <ul>
+                                        <li>Use your student ID as username</li>
+                                        <li>Default password: Your registration number</li>
+                                        <li>Change password after first login</li>
+                                        <li>Access available 24/7 from any location</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Support</h5>
+                                    <ul>
+                                        <li>Library Help Desk: +234 803 456 7890</li>
+                                        <li>Email: library@aimakurdi.ng</li>
+                                        <li>Visit: Library Building, Room 102</li>
+                                        <li>Hours: 8:00 AM - 8:00 PM (Mon-Fri)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Databases Section -->
+    <section id="databases" class="databases-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Databases</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="database-card">
+                        <div class="database-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>JSTOR</h4>
+                        <p>Digital library of academic journals, books, and primary sources.</p>
+                        <span class="badge-new">Popular</span>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="database-card">
+                        <div class="database-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Project MUSE</h4>
+                        <p>Premium humanities and social sciences journals from scholarly publishers.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="database-card">
+                        <div class="database-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h4>ProQuest</h4>
+                        <p>Comprehensive collection of dissertations, theses, and academic papers.</p>
+                        <span class="badge-new">New</span>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="database-card">
+                        <div class="database-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>EBSCOhost</h4>
+                        <p>Research databases, e-journals, magazine subscriptions, and e-books.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="database-card">
+                        <div class="database-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4>PhilPapers</h4>
+                        <p>Comprehensive index and bibliography of philosophy works.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="database-card">
+                        <div class="database-icon">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h4>ATLA Religion Database</h4>
+                        <p>Premier index of journal articles, book reviews, and essays in religion.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Platforms Section -->
+    <section id="platforms" class="platforms-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Learning Management Systems</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Moodle LMS</h3>
+                        <p>Our primary learning management system for course materials, assignments, and discussions.</p>
+                        <div class="mt-4">
+                            <h5>Features:</h5>
+                            <ul class="list-unstyled">
+                                <li>• Course materials and resources</li>
+                                <li>• Assignment submission</li>
+                                <li>• Discussion forums</li>
+                                <li>• Grade tracking</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-3">Access Moodle</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Zoom for Education</h3>
+                        <p>Virtual classroom platform for online lectures, meetings, and collaborative sessions.</p>
+                        <div class="mt-4">
+                            <h5>Features:</h5>
+                            <ul class="list-unstyled">
+                                <li>• HD video conferencing</li>
+                                <li>• Screen sharing</li>
+                                <li>• Breakout rooms</li>
+                                <li>• Recording capabilities</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-3">Access Zoom</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-google"></i>
+                        </div>
+                        <h3>Google Workspace</h3>
+                        <p>Suite of productivity tools including Gmail, Drive, Docs, and Classroom.</p>
+                        <a href="#" class="btn btn-primary mt-3">Access Workspace</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3>Turnitin</h3>
+                        <p>Plagiarism detection software and academic integrity tool.</p>
+                        <a href="#" class="btn btn-primary mt-3">Access Turnitin</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="platform-card">
+                        <div class="platform-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>Adobe Creative Cloud</h3>
+                        <p>Creative tools for document creation, design, and multimedia projects.</p>
+                        <a href="#" class="btn btn-primary mt-3">Access Adobe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Tools Section -->
+    <section id="research" class="research-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research & Reference Tools</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <h4>Citation Management</h4>
+                        <p>Tools to help organize research and create bibliographies.</p>
+                        <ul>
+                            <li>Zotero - Free, easy-to-use tool</li>
+                            <li>Mendeley - Reference manager and academic social network</li>
+                            <li>EndNote - Advanced reference management</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Download Tools</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Data Analysis Software</h4>
+                        <p>Statistical and qualitative data analysis tools.</p>
+                        <ul>
+                            <li>SPSS - Statistical analysis</li>
+                            <li>NVivo - Qualitative data analysis</li>
+                            <li>R Studio - Open source statistical computing</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Software</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <h4>Research Guides</h4>
+                        <p>Subject-specific research guides and tutorials.</p>
+                        <ul>
+                            <li>Philosophy Research Guide</li>
+                            <li>Theology Research Methods</li>
+                            <li>Ethics Literature Review Guide</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">View Guides</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-archive"></i>
+                        </div>
+                        <h4>Digital Archives</h4>
+                        <p>Access to specialized digital archives and collections.</p>
+                        <ul>
+                            <li>Augustinian Digital Archive</li>
+                            <li>Vatican Library Digital Collections</li>
+                            <li>African Philosophy Digital Repository</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Browse Archives</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section id="quickaccess" class="quickaccess-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quick Access Links</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="access-card">
+                        <div class="access-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h5>Student Portal</h5>
+                        <a href="#" class="btn btn-primary btn-sm mt-2">Access Portal</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="access-card">
+                        <div class="access-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h5>Faculty Portal</h5>
+                        <a href="#" class="btn btn-primary btn-sm mt-2">Access Portal</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="access-card">
+                        <div class="access-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h5>Academic Calendar</h5>
+                        <a href="#" class="btn btn-primary btn-sm mt-2">View Calendar</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="access-card">
+                        <div class="access-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h5>E-Payment</h5>
+                        <a href="#" class="btn btn-primary btn-sm mt-2">Make Payment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="support-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Support</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-life-ring"></i>
+                        </div>
+                        <h3>IT Help Desk</h3>
+                        <p>Get assistance with technical issues, account problems, and access difficulties.</p>
+                        <div class="mt-4">
+                            <h5>Contact Information:</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-phone me-2"></i> +234 802 345 6789</li>
+                                <li><i class="fas fa-envelope me-2"></i> ithelp@aimakurdi.ng</li>
+                                <li><i class="fas fa-map-marker-alt me-2"></i> ICT Building, Room 201</li>
+                                <li><i class="fas fa-clock me-2"></i> 8:00 AM - 6:00 PM (Mon-Fri)</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-3">Submit Ticket</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <h3>Library Research Help</h3>
+                        <p>Get assistance with research, database navigation, and citation management.</p>
+                        <div class="mt-4">
+                            <h5>Services Available:</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check me-2"></i> Research consultations</li>
+                                <li><i class="fas fa-check me-2"></i> Database training</li>
+                                <li><i class="fas fa-check me-2"></i> Citation help</li>
+                                <li><i class="fas fa-check me-2"></i> Literature search assistance</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-3">Schedule Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number">15,000+</div>
+                        <div class="stat-text">E-Books Available</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-text">Academic Journals</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-text">Resource Access</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-text">Research Databases</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-column">
+                        <h3>GET IN TOUCH</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> +2347031828531, +2348030593538</p>
+                            <p><i class="fas fa-envelope"></i> rector@aimakurdi.ng</p>
+                            <p><i class="fas fa-globe"></i> www.aimakurdi.ng</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Otukpo Road, P.O Box 584, Makurdi</p>
+                        </div>
+                        
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-column">
+                        <h3>USEFUL LINKS</h3>
+                        <ul class="useful-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="academics.html">Academics</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="e-resources.html">E-Resources</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="footer-column">
+                        <h3>NEWSLETTER</h3>
+                        <p>Stay updated with our latest news and announcements.</p>
+                        <form class="d-flex">
+                            <input type="email" class="form-control me-2" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary-custom"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Augustinian Institute, Makurdi. All Rights Reserved.</p>
+                <p>Designed by Web Development Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

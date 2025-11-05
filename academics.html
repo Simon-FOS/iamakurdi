@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Augustinian Institute, Makurdi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #26308e;
+            --white: #ffffff;
+            --grey: #d3d3d3;
+            --dark-grey: #555;
+            --light-blue: #eef0ff;
+            --dark-blue: #1a236e;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* ===== HEADER SECTION ===== */
+        .main-header {
+            background-color: var(--primary-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container img {
+            height: 90px;
+            width: auto;
+            background-color: var(--white);
+            border-radius: 4px;
+            padding: 4px;
+            object-fit: contain;
+        }
+
+        .institute-title {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .institute-title h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: var(--white);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .institute-title p {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            margin-bottom: 0;
+        }
+        
+        /* Navigation */
+        .main-navbar {
+            background-color: var(--dark-blue);
+            padding: 0;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--grey);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            width: 0;
+            height: 3px;
+            background-color: var(--white);
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: calc(100% - 40px);
+        }
+        
+        .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 5px 10px;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Dropdown Menu */
+        .dropdown-menu {
+            background-color: var(--dark-blue);
+            border: none;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dropdown-item {
+            color: var(--white);
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--grey);
+        }
+        
+        .dropdown-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Section */
+        .academics-hero-section {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(38, 48, 142, 0.7), rgba(38, 48, 142, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .academics-hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .academics-hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .academics-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+        
+        /* Department Section */
+        .department-section {
+            background-color: var(--light-blue);
+        }
+        
+        .department-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .department-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .department-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Resources Section */
+        .resources-section {
+            background-color: var(--white);
+        }
+        
+        .resource-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Research Section */
+        .research-section {
+            background-color: var(--light-blue);
+        }
+        
+        .research-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .research-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Services Section */
+        .services-section {
+            background-color: var(--white);
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Support Section */
+        .support-section {
+            background-color: var(--light-blue);
+        }
+        
+        .support-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .support-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Alumni Section */
+        .alumni-section {
+            background-color: var(--white);
+        }
+        
+        .alumni-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .alumni-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .alumni-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* Accordion */
+        .accordion-button {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            font-weight: 600;
+            padding: 15px 20px;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--primary-blue);
+        }
+        
+        /* Table Styling */
+        .table-custom {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .table-custom thead {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .table-custom th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .table-custom td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .table-custom tbody tr:hover {
+            background-color: var(--light-blue);
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: #1a1a2e;
+            color: var(--white);
+            padding-top: 60px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-blue);
+            width: 20px;
+        }
+        
+        .useful-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .useful-links li {
+            margin-bottom: 10px;
+        }
+        
+        .useful-links a {
+            color: var(--grey);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .useful-links a:hover {
+            color: var(--white);
+        }
+        
+        .newsletter p {
+            margin-bottom: 20px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            color: var(--grey);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .institute-title h1 {
+                font-size: 1.7rem;
+            }
+            
+            .logo-container img {
+                height: 80px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .institute-title h1 {
+                font-size: 1.5rem;
+            }
+            
+            .institute-title p {
+                font-size: 0.8rem;
+            }
+            
+            .logo-container img {
+                height: 70px;
+            }
+            
+            .header-buttons {
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            .academics-hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .academics-hero-content p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Left Logo -->
+                    <div class="col-md-3 col-4">
+                        <div class="logo-container">
+                            <img src="static/images/ailogo.png" alt="Augustinian Institute Logo" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="col-md-6 col-12 text-center my-2 my-md-0">
+                        <div class="institute-title">
+                            <h2>Augustinian Institute, Makurdi</h2>
+                            <p>(Affiliate of Rev. Fr. Moses Orshio Adasu University, Makurdi)</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Logo -->
+                    <div class="col-md-3 col-4 text-end">
+                        <div class="logo-container">
+                            <img src="static/images/mologo.png" alt="Rev. Fr. Moses Orshio Adasu University Logo" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="navbar navbar-expand-lg main-navbar" aria-label="Primary Navigation">
+            <div class="container">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Academics
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+                                <li><h6 class="dropdown-header">Department</h6></li>
+                                <li><a class="dropdown-item" href="#department">Department of Philosophy</a></li>
+                                <li><a class="dropdown-item" href="#programmes">Academic Programmes</a></li>
+                                <li><a class="dropdown-item" href="#courses">Course Structure</a></li>
+                                <li><a class="dropdown-item" href="#admission">Admission Requirements</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Academic Resources</h6></li>
+                                <li><a class="dropdown-item" href="#calendar">Academic Calendar</a></li>
+                                <li><a class="dropdown-item" href="#examination">Examination & Assessment</a></li>
+                                <li><a class="dropdown-item" href="#handbook">Student Handbook</a></li>
+                                <li><a class="dropdown-item" href="#elibrary">E-Library</a></li>
+                                <li><a class="dropdown-item" href="#repository">Institutional Repository</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Research & Scholarship</h6></li>
+                                <li><a class="dropdown-item" href="#publications">Staff Publications</a></li>
+                                <li><a class="dropdown-item" href="#research">Student Research Projects</a></li>
+                                <li><a class="dropdown-item" href="#journals">Journals & Articles</a></li>
+                                <li><a class="dropdown-item" href="#ethics">Research Ethics Policy</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Academic Services</h6></li>
+                                <li><a class="dropdown-item" href="#transcript">Transcript Application</a></li>
+                                <li><a class="dropdown-item" href="#tuition">Tuition Fees & Payment</a></li>
+                                <li><a class="dropdown-item" href="#scholarship">Scholarship & Financial Aid</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Learning Support</h6></li>
+                                <li><a class="dropdown-item" href="#library">Library Services</a></li>
+                                <li><a class="dropdown-item" href="#gst">General Studies (GST)</a></li>
+                                <li><a class="dropdown-item" href="#advising">Academic Advising</a></li>
+                                <li><a class="dropdown-item" href="#ict">ICT & E-Learning Support</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Alumni Network</h6></li>
+                                <li><a class="dropdown-item" href="#association">Alumni Association</a></li>
+                                <li><a class="dropdown-item" href="#registration">Alumni Registration</a></li>
+                                <li><a class="dropdown-item" href="#success">Success Stories</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="e-resources.html">E-Resources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-primary text-white px-4 py-2" style="background-color: #0056b3; border-color: #004a9f;">
+                            Portal
+                        </a>
+                        <a href="#" class="btn btn-outline-light px-4 py-2" style="color: #0056b3; border: 2px solid #0056b3;">
+                            E-Library
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Academics Hero Section -->
+    <section class="academics-hero-section">
+        <div class="academics-hero-content">
+            <h2>Academic Excellence at Augustinian Institute</h2>
+            <p>Nurturing minds, shaping futures through quality education and research</p>
+        </div>
+    </section>
+
+    <!-- Department Section -->
+    <section id="department" class="department-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Department of Philosophy</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="department-card">
+                        <div class="department-icon text-center">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="text-center mb-4">Department Overview</h3>
+                        <p>The Department of Philosophy at Augustinian Institute is dedicated to the pursuit of wisdom, truth, and understanding through rigorous intellectual inquiry. Our programs are designed to develop critical thinking, ethical reasoning, and a deep appreciation for the philosophical traditions that have shaped human thought.</p>
+                        <p>Our faculty consists of distinguished scholars and practitioners who are committed to providing students with a comprehensive philosophical education that integrates theoretical knowledge with practical application.</p>
+                        
+                        <div class="accordion mt-5" id="philosophyAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="programmesHeading">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#programmesCollapse" aria-expanded="true" aria-controls="programmesCollapse">
+                                        Academic Programmes
+                                    </button>
+                                </h2>
+                                <div id="programmesCollapse" class="accordion-collapse collapse show" aria-labelledby="programmesHeading" data-bs-parent="#philosophyAccordion">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><strong>Bachelor of Arts in Philosophy (B.A. Philosophy)</strong> - 4-year undergraduate program</li>
+                                            <li><strong>Postgraduate Diploma in Philosophy (PGD Philosophy)</strong> - 1-year program</li>
+                                            <li><strong>Master of Arts in Philosophy (M.A. Philosophy)</strong> - 2-year postgraduate program</li>
+                                            <li><strong>Doctor of Philosophy (Ph.D.) in Philosophy</strong> - 3-5 year research program</li>
+                                            <li><strong>Certificate Courses</strong> in specialized areas of philosophy</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="coursesHeading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#coursesCollapse" aria-expanded="false" aria-controls="coursesCollapse">
+                                        Course Structure
+                                    </button>
+                                </h2>
+                                <div id="coursesCollapse" class="accordion-collapse collapse" aria-labelledby="coursesHeading" data-bs-parent="#philosophyAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Core Philosophy Courses</h5>
+                                        <ul>
+                                            <li>History of Ancient Philosophy</li>
+                                            <li>Medieval Philosophy</li>
+                                            <li>Modern Philosophy</li>
+                                            <li>Contemporary Philosophy</li>
+                                            <li>Logic and Critical Thinking</li>
+                                            <li>Ethics and Moral Philosophy</li>
+                                            <li>Metaphysics</li>
+                                            <li>Epistemology</li>
+                                            <li>Philosophy of Religion</li>
+                                            <li>African Philosophy</li>
+                                        </ul>
+                                        
+                                        <h5>Specialized Electives</h5>
+                                        <ul>
+                                            <li>Philosophy of Science</li>
+                                            <li>Political Philosophy</li>
+                                            <li>Philosophy of Mind</li>
+                                            <li>Environmental Ethics</li>
+                                            <li>Bioethics</li>
+                                            <li>Philosophy of Law</li>
+                                            <li>Aesthetics</li>
+                                            <li>Philosophical Anthropology</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="admissionHeading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#admissionCollapse" aria-expanded="false" aria-controls="admissionCollapse">
+                                        Admission Requirements
+                                    </button>
+                                </h2>
+                                <div id="admissionCollapse" class="accordion-collapse collapse" aria-labelledby="admissionHeading" data-bs-parent="#philosophyAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Undergraduate Program (B.A. Philosophy)</h5>
+                                        <ul>
+                                            <li>Minimum of 5 credits in SSCE/GCE/O'Level including English and Mathematics</li>
+                                            <li>JAMB UTME score of 150 and above</li>
+                                            <li>Post-UTME screening exercise</li>
+                                            <li>Direct Entry requirements: Two A'Level passes in relevant subjects</li>
+                                        </ul>
+                                        
+                                        <h5>Postgraduate Programs</h5>
+                                        <ul>
+                                            <li><strong>PGD Philosophy:</strong> First degree in any discipline with a minimum of Third Class</li>
+                                            <li><strong>M.A. Philosophy:</strong> First degree in Philosophy with a minimum of Second Class Lower</li>
+                                            <li><strong>Ph.D. Philosophy:</strong> Master's degree in Philosophy with a minimum CGPA of 3.5</li>
+                                        </ul>
+                                        
+                                        <p><strong>Note:</strong> All applicants must meet the general admission requirements of the Institute and may be required to participate in an interview process.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="calendar" class="resources-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Resources</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Academic Calendar</h3>
+                        <p>Access the current academic calendar with important dates for registration, lectures, examinations, and holidays.</p>
+                        <a href="#" class="btn btn-primary mt-3">View Calendar</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Examination & Assessment</h3>
+                        <p>Guidelines, policies, and procedures for examinations, grading system, and academic assessment.</p>
+                        <a href="#" class="btn btn-primary mt-3">View Guidelines</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Student Handbook</h3>
+                        <p>Comprehensive guide to academic policies, student rights and responsibilities, and campus resources.</p>
+                        <a href="#" class="btn btn-primary mt-3">Download</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>E-Library</h3>
+                        <p>Access to digital resources, online databases, e-books, journals, and research materials.</p>
+                        <a href="#" class="btn btn-primary mt-3">Access E-Library</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-archive"></i>
+                        </div>
+                        <h3>Institutional Repository</h3>
+                        <p>Digital archive of research outputs, theses, dissertations, and publications by faculty and students.</p>
+                        <a href="#" class="btn btn-primary mt-3">Browse Repository</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="publications" class="research-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research and Scholarship</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Staff Publications</h3>
+                        <p>Explore the research contributions of our faculty members through their publications, conference papers, and scholarly works.</p>
+                        <ul>
+                            <li>Journal Articles in International Publications</li>
+                            <li>Books and Book Chapters</li>
+                            <li>Conference Proceedings</li>
+                            <li>Research Monographs</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">View Publications</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Student Research Projects</h3>
+                        <p>Showcasing outstanding undergraduate and postgraduate research projects, theses, and dissertations.</p>
+                        <ul>
+                            <li>Undergraduate Honors Theses</li>
+                            <li>Master's Dissertations</li>
+                            <li>Doctoral Theses</li>
+                            <li>Student Research Awards</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">View Projects</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3>Journals & Articles</h3>
+                        <p>Access to academic journals, both internal and external, relevant to philosophical studies and related disciplines.</p>
+                        <ul>
+                            <li>Augustinian Journal of Philosophy</li>
+                            <li>African Philosophical Review</li>
+                            <li>International Journal of Ethics</li>
+                            <li>Philosophy Today</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Browse Journals</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="research-card">
+                        <div class="research-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Research Ethics Policy</h3>
+                        <p>Comprehensive guidelines and policies governing ethical conduct in research activities at the Institute.</p>
+                        <ul>
+                            <li>Research Integrity Guidelines</li>
+                            <li>Ethical Review Procedures</li>
+                            <li>Plagiarism Policy</li>
+                            <li>Data Management Guidelines</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">View Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="transcript" class="services-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Services</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-certificate"></i>
+                        </div>
+                        <h3>Transcript Application</h3>
+                        <p>Request official academic transcripts for further studies, employment, or professional purposes.</p>
+                        <a href="#" class="btn btn-primary mt-3">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Tuition Fees & Payment</h3>
+                        <p>Information on tuition fees, payment schedules, and available payment options for students.</p>
+                        <a href="#" class="btn btn-primary mt-3">View Fees</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>Scholarship & Financial Aid</h3>
+                        <p>Information on available scholarships, bursaries, and financial assistance programs for students.</p>
+                        <a href="#" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="library" class="support-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Learning Support</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <h3>Library Services</h3>
+                        <p>Comprehensive library services including book lending, reference assistance, research support, and study spaces.</p>
+                        <ul>
+                            <li>Extensive collection of philosophy texts</li>
+                            <li>Digital resources and online databases</li>
+                            <li>Interlibrary loan services</li>
+                            <li>Research consultation with librarians</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Library Portal</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>General Studies (GST)</h3>
+                        <p>Interdisciplinary courses designed to provide students with a broad educational foundation and essential skills.</p>
+                        <ul>
+                            <li>Use of English and Communication Skills</li>
+                            <li>Nigerian Peoples and Culture</li>
+                            <li>Entrepreneurship Studies</li>
+                            <li>Introduction to Computer Science</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">GST Courses</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Academic Advising</h3>
+                        <p>Personalized academic guidance and mentoring to help students navigate their educational journey successfully.</p>
+                        <ul>
+                            <li>Course selection and registration assistance</li>
+                            <li>Academic progress monitoring</li>
+                            <li>Career guidance and planning</li>
+                            <li>Graduate school preparation</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Meet Advisors</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>ICT & E-Learning Support</h3>
+                        <p>Comprehensive technology support services to enhance teaching, learning, and research activities.</p>
+                        <ul>
+                            <li>Learning Management System (LMS)</li>
+                            <li>Computer laboratories and Wi-Fi access</li>
+                            <li>Technical support and troubleshooting</li>
+                            <li>Digital literacy training</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">IT Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alumni Section -->
+    <section id="association" class="alumni-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Alumni Network</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="alumni-card">
+                        <div class="alumni-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Alumni Association</h3>
+                        <p>Join our vibrant alumni community to stay connected, network, and contribute to the growth of the Institute.</p>
+                        <a href="#" class="btn btn-primary mt-3">Join Association</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="alumni-card">
+                        <div class="alumni-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Alumni Registration</h3>
+                        <p>Register as an alumnus to receive updates, invitations to events, and access to alumni benefits.</p>
+                        <a href="#" class="btn btn-primary mt-3">Register Now</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="alumni-card">
+                        <div class="alumni-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Success Stories</h3>
+                        <p>Read inspiring stories of our alumni who are making significant contributions in various fields.</p>
+                        <a href="#" class="btn btn-primary mt-3">View Stories</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">Notable Alumni</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="text-center">
+                                        <img src="/static/images/ailogo.png" alt="Alumni 1" class="rounded-circle mb-3" width="120" height="120">
+                                        <h5>Dr. Adebayo Johnson</h5>
+                                        <p class="text-muted">Senior Lecturer, University of Lagos</p>
+                                        <p>"My philosophy education at Augustinian Institute provided the critical thinking foundation for my academic career."</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="text-center">
+                                        <img src="/static/images/ailogo.png" alt="Alumni 2" class="rounded-circle mb-3" width="120" height="120">
+                                        <h5>Chinwe Okoro</h5>
+                                        <p class="text-muted">Human Rights Lawyer</p>
+                                        <p>"The ethical training I received has been invaluable in my legal practice and advocacy work."</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="text-center">
+                                        <img src="/static/images/ailogo.png" alt="Alumni 3" class="rounded-circle mb-3" width="120" height="120">
+                                        <h5>Rev. Fr. Michael Adeyemi</h5>
+                                        <p class="text-muted">Diocesan Priest & Educator</p>
+                                        <p>"The integration of faith and reason at Augustinian Institute shaped my ministry and educational approach."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+  <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-column">
+                        <h3>GET IN TOUCH</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> +2347031828531, +2348030593538</p>
+                            <p><i class="fas fa-envelope"></i> rector@aimakurdi.ng</p>
+                            <p><i class="fas fa-globe"></i> www.aimakurdi.ng</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Otukpo Road, P.O Box 584, Makurdi</p>
+                        </div>
+                        
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-column">
+                        <h3>USEFUL LINKS</h3>
+                        <ul class="useful-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="academics.html">Academics</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="e-resources.html">E-Resources</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="footer-column">
+                        <h3>NEWSLETTER</h3>
+                        <p>Stay updated with our latest news and announcements.</p>
+                        <form class="d-flex">
+                            <input type="email" class="form-control me-2" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary-custom"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Augustinian Institute, Makurdi. All Rights Reserved.</p>
+                <p>Powered by AI ICT Center</p>
+            </div>
+        </div>
+    </footer>m
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
