@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary-blue: #26308e;
@@ -19,7 +22,7 @@
             --light-blue: #eef0ff;
             --dark-blue: #1a236e;
         }
-        
+
         body {
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
@@ -27,7 +30,12 @@
             background-color: var(--white);
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
         }
@@ -73,13 +81,13 @@
             color: #e8e8e8;
             margin-bottom: 0;
         }
-        
+
         /* Navigation */
         .main-navbar {
             background-color: var(--dark-blue);
             padding: 0;
         }
-        
+
         .navbar-nav .nav-link {
             color: var(--white);
             font-weight: 500;
@@ -87,13 +95,13 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
             color: var(--grey);
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
@@ -104,21 +112,21 @@
             background-color: var(--white);
             transition: width 0.3s ease;
         }
-        
+
         .navbar-nav .nav-link:hover::after,
         .navbar-nav .nav-link.active::after {
             width: calc(100% - 40px);
         }
-        
+
         .navbar-toggler {
             border: 1px solid rgba(255, 255, 255, 0.5);
             padding: 5px 10px;
         }
-        
+
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
-        
+
         /* Dropdown Menu */
         .dropdown-menu {
             background-color: var(--dark-blue);
@@ -126,22 +134,22 @@
             border-radius: 0 0 8px 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .dropdown-item {
             color: var(--white);
             padding: 10px 20px;
             transition: all 0.3s ease;
         }
-        
+
         .dropdown-item:hover {
             background-color: rgba(255, 255, 255, 0.1);
             color: var(--grey);
         }
-        
+
         .dropdown-divider {
             border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         /* Hero Section */
         .eresources-hero-section {
             position: relative;
@@ -155,47 +163,54 @@
             text-align: center;
             color: var(--white);
         }
-        
+
         .eresources-hero-content {
             max-width: 800px;
             padding: 0 20px;
             animation: fadeIn 1.5s ease;
         }
-        
+
         .eresources-hero-content h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             line-height: 1.3;
         }
-        
+
         .eresources-hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             opacity: 0.9;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         /* Sections */
         .section-padding {
             padding: 80px 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 50px;
             position: relative;
         }
-        
+
         .section-title h2 {
             font-size: 2rem;
             color: var(--primary-blue);
             display: inline-block;
         }
-        
+
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -206,12 +221,12 @@
             height: 3px;
             background-color: var(--primary-blue);
         }
-        
+
         /* E-Library Section */
         .elibrary-section {
             background-color: var(--light-blue);
         }
-        
+
         .resource-card {
             background-color: var(--white);
             border-radius: 8px;
@@ -221,22 +236,22 @@
             transition: transform 0.3s ease;
             text-align: center;
         }
-        
+
         .resource-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .resource-icon {
             font-size: 2.5rem;
             color: var(--primary-blue);
             margin-bottom: 20px;
         }
-        
+
         /* Databases Section */
         .databases-section {
             background-color: var(--white);
         }
-        
+
         .database-card {
             background-color: var(--light-blue);
             border-radius: 8px;
@@ -245,22 +260,22 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
-        
+
         .database-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .database-icon {
             font-size: 2rem;
             color: var(--primary-blue);
             margin-bottom: 15px;
         }
-        
+
         /* Learning Platforms Section */
         .platforms-section {
             background-color: var(--light-blue);
         }
-        
+
         .platform-card {
             background-color: var(--white);
             border-radius: 8px;
@@ -270,22 +285,22 @@
             transition: transform 0.3s ease;
             text-align: center;
         }
-        
+
         .platform-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .platform-icon {
             font-size: 2.5rem;
             color: var(--primary-blue);
             margin-bottom: 20px;
         }
-        
+
         /* Research Tools Section */
         .research-section {
             background-color: var(--white);
         }
-        
+
         .tool-card {
             background-color: var(--light-blue);
             border-radius: 8px;
@@ -294,22 +309,22 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
-        
+
         .tool-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .tool-icon {
             font-size: 2rem;
             color: var(--primary-blue);
             margin-bottom: 15px;
         }
-        
+
         /* Quick Access Section */
         .quickaccess-section {
             background-color: var(--light-blue);
         }
-        
+
         .access-card {
             background-color: var(--white);
             border-radius: 8px;
@@ -319,22 +334,22 @@
             transition: transform 0.3s ease;
             text-align: center;
         }
-        
+
         .access-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .access-icon {
             font-size: 2rem;
             color: var(--primary-blue);
             margin-bottom: 15px;
         }
-        
+
         /* Support Section */
         .support-section {
             background-color: var(--white);
         }
-        
+
         .support-card {
             background-color: var(--light-blue);
             border-radius: 8px;
@@ -343,52 +358,52 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
-        
+
         .support-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .support-icon {
             font-size: 2.5rem;
             color: var(--primary-blue);
             margin-bottom: 20px;
         }
-        
+
         /* Stats Section */
         .stats-section {
             background-color: var(--primary-blue);
             color: var(--white);
         }
-        
+
         .stat-item {
             text-align: center;
             padding: 20px;
         }
-        
+
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
-        
+
         .stat-text {
             font-size: 1.2rem;
         }
-        
+
         /* Footer */
         .main-footer {
             background-color: #1a1a2e;
             color: var(--white);
             padding-top: 60px;
         }
-        
+
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
         }
-        
+
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -398,48 +413,48 @@
             height: 2px;
             background-color: var(--primary-blue);
         }
-        
+
         .contact-info p {
             margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
         }
-        
+
         .contact-info i {
             margin-right: 10px;
             color: var(--primary-blue);
             width: 20px;
         }
-        
+
         .useful-links {
             list-style: none;
             padding-left: 0;
         }
-        
+
         .useful-links li {
             margin-bottom: 10px;
         }
-        
+
         .useful-links a {
             color: var(--grey);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .useful-links a:hover {
             color: var(--white);
         }
-        
+
         .newsletter p {
             margin-bottom: 20px;
         }
-        
+
         .social-icons {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-icons a {
             display: flex;
             align-items: center;
@@ -453,12 +468,12 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
-        
+
         .social-icons a:hover {
             background-color: var(--primary-blue);
             transform: translateY(-5px);
         }
-        
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding: 20px 0;
@@ -467,7 +482,7 @@
             font-size: 0.9rem;
             margin-top: 40px;
         }
-        
+
         /* Badge Styling */
         .badge-new {
             background-color: #28a745;
@@ -477,56 +492,57 @@
             font-size: 0.7rem;
             margin-left: 5px;
         }
-        
+
         /* Responsive Adjustments */
         @media (max-width: 992px) {
             .institute-title h1 {
                 font-size: 1.7rem;
             }
-            
+
             .logo-container img {
                 height: 80px;
             }
         }
-        
+
         @media (max-width: 768px) {
             .institute-title h1 {
                 font-size: 1.5rem;
             }
-            
+
             .institute-title p {
                 font-size: 0.8rem;
             }
-            
+
             .logo-container img {
                 height: 70px;
             }
-            
+
             .header-buttons {
                 justify-content: center;
                 margin-top: 15px;
             }
-            
+
             .eresources-hero-content h2 {
                 font-size: 2rem;
             }
-            
+
             .eresources-hero-content p {
                 font-size: 1rem;
             }
         }
-        
+
         @media (max-width: 576px) {
             .section-padding {
                 padding: 60px 0;
             }
-            
+
             .section-title h2 {
                 font-size: 1.7rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- ===== HEADER ===== -->
     <header>
@@ -551,7 +567,8 @@
                     <!-- Right Logo -->
                     <div class="col-md-3 col-4 text-end">
                         <div class="logo-container">
-                            <img src="static/images/mologo.png" alt="Rev. Fr. Moses Orshio Adasu University Logo" loading="lazy">
+                            <img src="static/images/mologo.png" alt="Rev. Fr. Moses Orshio Adasu University Logo"
+                                loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -561,7 +578,9 @@
         <!-- ===== NAVIGATION ===== -->
         <nav class="navbar navbar-expand-lg main-navbar" aria-label="Primary Navigation">
             <div class="container">
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -570,27 +589,34 @@
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="academics.html" id="academicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="academics.html" id="academicsDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Academics
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
-                                <li><a class="dropdown-item" href="academics.html#department">Department of Philosophy</a></li>
-                                <li><a class="dropdown-item" href="academics.html#programmes">Academic Programmes</a></li>
+                                <li><a class="dropdown-item" href="academics.html#department">Department of
+                                        Philosophy</a></li>
+                                <li><a class="dropdown-item" href="academics.html#programmes">Academic Programmes</a>
+                                </li>
                                 <li><a class="dropdown-item" href="academics.html#courses">Course Structure</a></li>
-                                <li><a class="dropdown-item" href="academics.html#admission">Admission Requirements</a></li>
+                                <li><a class="dropdown-item" href="academics.html#admission">Admission Requirements</a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link active" href="e-resources.html">E-Resources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="e-journal.html">E-Journal</a></li>
                         <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     </ul>
 
                     <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2" style="background-color: #0056b3; border-color: #004a9f;">
-                            Portal
-                        </a>
-                        <a href="#" class="btn btn-outline-light px-4 py-2" style="color: #0056b3; border: 2px solid #0056b3;">
+                        <a href="#" class="btn btn-primary text-white px-4 py-2"
+                            style="background-color: #0056b3; border-color: #004a9f;">
                             E-Library
+                        </a>
+                        <a href="https://www.aimakurdi.ng:2096/cpsess8788782269/3rdparty/roundcube/"
+                            class="btn btn-outline-light px-4 py-2" style="color: #0056b3; border: 2px solid #0056b3;">
+                            Emails
                         </a>
                     </div>
                 </div>
@@ -612,7 +638,7 @@
             <div class="section-title">
                 <h2>Digital Library Resources</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="resource-card">
@@ -620,7 +646,8 @@
                             <i class="fas fa-book"></i>
                         </div>
                         <h3>E-Books Collection</h3>
-                        <p>Access thousands of digital books covering philosophy, theology, ethics, and related disciplines.</p>
+                        <p>Access thousands of digital books covering philosophy, theology, ethics, and related
+                            disciplines.</p>
                         <ul class="list-unstyled mt-3">
                             <li>• Over 10,000 philosophy e-books</li>
                             <li>• Academic and reference texts</li>
@@ -629,7 +656,7 @@
                         <a href="#" class="btn btn-primary mt-3">Browse E-Books</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="resource-card">
                         <div class="resource-icon">
@@ -645,7 +672,7 @@
                         <a href="#" class="btn btn-primary mt-3">Access Journals</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="resource-card">
                         <div class="resource-icon">
@@ -662,7 +689,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <div class="card border-0 shadow">
@@ -703,7 +730,7 @@
             <div class="section-title">
                 <h2>Academic Databases</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="database-card">
@@ -716,7 +743,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="database-card">
                         <div class="database-icon">
@@ -727,7 +754,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="database-card">
                         <div class="database-icon">
@@ -739,7 +766,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="database-card">
                         <div class="database-icon">
@@ -750,7 +777,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="database-card">
                         <div class="database-icon">
@@ -761,7 +788,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Database</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="database-card">
                         <div class="database-icon">
@@ -782,7 +809,7 @@
             <div class="section-title">
                 <h2>Learning Management Systems</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="platform-card">
@@ -790,7 +817,8 @@
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
                         <h3>Moodle LMS</h3>
-                        <p>Our primary learning management system for course materials, assignments, and discussions.</p>
+                        <p>Our primary learning management system for course materials, assignments, and discussions.
+                        </p>
                         <div class="mt-4">
                             <h5>Features:</h5>
                             <ul class="list-unstyled">
@@ -803,7 +831,7 @@
                         <a href="#" class="btn btn-primary mt-3">Access Moodle</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6 mb-4">
                     <div class="platform-card">
                         <div class="platform-icon">
@@ -824,7 +852,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row mt-4">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="platform-card">
@@ -836,7 +864,7 @@
                         <a href="#" class="btn btn-primary mt-3">Access Workspace</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="platform-card">
                         <div class="platform-icon">
@@ -847,7 +875,7 @@
                         <a href="#" class="btn btn-primary mt-3">Access Turnitin</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="platform-card">
                         <div class="platform-icon">
@@ -868,7 +896,7 @@
             <div class="section-title">
                 <h2>Research & Reference Tools</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="tool-card">
@@ -885,7 +913,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm mt-2">Download Tools</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6 mb-4">
                     <div class="tool-card">
                         <div class="tool-icon">
@@ -901,7 +929,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm mt-2">Access Software</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6 mb-4">
                     <div class="tool-card">
                         <div class="tool-icon">
@@ -917,7 +945,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm mt-2">View Guides</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6 mb-4">
                     <div class="tool-card">
                         <div class="tool-icon">
@@ -943,7 +971,7 @@
             <div class="section-title">
                 <h2>Quick Access Links</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="access-card">
@@ -954,7 +982,7 @@
                         <a href="#" class="btn btn-primary btn-sm mt-2">Access Portal</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="access-card">
                         <div class="access-icon">
@@ -964,7 +992,7 @@
                         <a href="#" class="btn btn-primary btn-sm mt-2">Access Portal</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="access-card">
                         <div class="access-icon">
@@ -974,7 +1002,7 @@
                         <a href="#" class="btn btn-primary btn-sm mt-2">View Calendar</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="access-card">
                         <div class="access-icon">
@@ -994,7 +1022,7 @@
             <div class="section-title">
                 <h2>Technical Support</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="support-card">
@@ -1015,7 +1043,7 @@
                         <a href="#" class="btn btn-primary mt-3">Submit Ticket</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6 mb-4">
                     <div class="support-card">
                         <div class="support-icon">
@@ -1084,7 +1112,7 @@
                             <p><i class="fas fa-globe"></i> www.aimakurdi.ng</p>
                             <p><i class="fas fa-map-marker-alt"></i> Otukpo Road, P.O Box 584, Makurdi</p>
                         </div>
-                        
+
                         <div class="social-icons">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1094,7 +1122,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="footer-column">
                         <h3>USEFUL LINKS</h3>
@@ -1108,19 +1136,20 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-12 mb-4">
                     <div class="footer-column">
                         <h3>NEWSLETTER</h3>
                         <p>Stay updated with our latest news and announcements.</p>
                         <form class="d-flex">
                             <input type="email" class="form-control me-2" placeholder="Your Email Address" required>
-                            <button type="submit" class="btn btn-primary-custom"><i class="fas fa-paper-plane"></i></button>
+                            <button type="submit" class="btn btn-primary-custom"><i
+                                    class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Augustinian Institute, Makurdi. All Rights Reserved.</p>
                 <p>Designed by Web Development Team</p>
@@ -1131,4 +1160,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

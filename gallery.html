@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Augustinian Institute, Makurdi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #26308e;
+            --white: #ffffff;
+            --grey: #d3d3d3;
+            --dark-grey: #555;
+            --light-blue: #eef0ff;
+            --dark-blue: #1a236e;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--white);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* ===== HEADER SECTION ===== */
+        .main-header {
+            background-color: var(--primary-blue);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container img {
+            height: 90px;
+            width: auto;
+            background-color: var(--white);
+            border-radius: 4px;
+            padding: 4px;
+            object-fit: contain;
+        }
+
+        .institute-title {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .institute-title h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: var(--white);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .institute-title p {
+            font-size: 0.95rem;
+            color: #e8e8e8;
+            margin-bottom: 0;
+        }
+
+        /* Navigation */
+        .main-navbar {
+            background-color: var(--dark-blue);
+            padding: 0;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--grey);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            width: 0;
+            height: 3px;
+            background-color: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: calc(100% - 40px);
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 5px 10px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Gallery Hero Section */
+        .gallery-hero {
+            background: linear-gradient(rgba(38, 48, 142, 0.8), rgba(38, 48, 142, 0.8)), url('static/images/aiadmin.jpg') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .gallery-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .gallery-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: var(--light-blue);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        /* Gallery Filter */
+        .gallery-filter {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 250px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .gallery-category {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Lightbox Modal */
+        .modal-content {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .modal-body {
+            padding: 0;
+            position: relative;
+        }
+
+        .lightbox-img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            padding: 15px 20px;
+            background-color: var(--white);
+        }
+
+        .lightbox-title {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .lightbox-description {
+            color: var(--dark-grey);
+            margin-bottom: 0;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: #1a1a2e;
+            color: var(--white);
+            padding-top: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-blue);
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-blue);
+            width: 20px;
+        }
+
+        .useful-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .useful-links li {
+            margin-bottom: 10px;
+        }
+
+        .useful-links a {
+            color: var(--grey);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .useful-links a:hover {
+            color: var(--white);
+        }
+
+        .newsletter p {
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            color: var(--grey);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .institute-title h1 {
+                font-size: 1.7rem;
+            }
+
+            .logo-container img {
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .institute-title h1 {
+                font-size: 1.5rem;
+            }
+
+            .institute-title p {
+                font-size: 0.8rem;
+            }
+
+            .logo-container img {
+                height: 70px;
+            }
+
+            .gallery-hero h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-hero p {
+                font-size: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 1.7rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-btn {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Left Logo -->
+                    <div class="col-md-3 col-4">
+                        <div class="logo-container">
+                            <img src="static/images/ailogo.png" alt="Augustinian Institute Logo" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="col-md-6 col-12 text-center my-2 my-md-0">
+                        <div class="institute-title">
+                            <h2>Augustinian Institute, Makurdi</h2>
+                            <p>(Affiliate of Rev. Fr. Moses Orshio Adasu University, Makurdi)</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Logo -->
+                    <div class="col-md-3 col-4 text-end">
+                        <div class="logo-container">
+                            <img src="static/images/mologo.png" alt="Rev. Fr. Moses Orshio Adasu University Logo"
+                                loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="navbar navbar-expand-lg main-navbar" aria-label="Primary Navigation">
+            <div class="container">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="academics.html" id="academicsDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Academics
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+                                <li><a class="dropdown-item" href="academics.html#department">Department of
+                                        Philosophy</a></li>
+                                <li><a class="dropdown-item" href="academics.html#programmes">Academic Programmes</a>
+                                </li>
+                                <li><a class="dropdown-item" href="academics.html#courses">Course Structure</a></li>
+                                <li><a class="dropdown-item" href="academics.html#admission">Admission Requirements</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="e-journal.html">E-Journal</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-primary text-white px-4 py-2"
+                            style="background-color: #0056b3; border-color: #004a9f;">
+                            E-Library
+                        </a>
+                        <a href="https://www.aimakurdi.ng:2096/cpsess8788782269/3rdparty/roundcube/"
+                            class="btn btn-outline-light px-4 py-2" style="color: #0056b3; border: 2px solid #0056b3;">
+                            Emails
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1>Institute Gallery</h1>
+            <p>Explore our Institute, events, academic activities, and community life through captivating visuals</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Photo Gallery</h2>
+            </div>
+
+            <!-- Gallery Filter -->
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="institute">Institute Life</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Institute Life Images -->
+                <div class="gallery-item" data-category="institute">
+                    <img src="static/images/imass12.jpg" alt="Augustinian Institute Campus" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Governing Board</div>
+                        <div class="gallery-category">Institute Life</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="institute">
+                    <img src="static/images/imass16.jpg" alt="Students at Augustinian Institute" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Students Engaged in Learning</div>
+                        <div class="gallery-category">Institute Life</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="institute">
+                    <img src="static/images/imass7.jpg" alt="Administrative Building" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">2025 Inaugural Mass</div>
+                        <div class="gallery-category">Institute Life</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="institute">
+                    <img src="static/images/imass15.jpg" alt="Institute Chapel" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Institute Chapel</div>
+                        <div class="gallery-category">Institute Life</div>
+                    </div>
+                </div>
+
+                <!-- Events Images -->
+                <div class="gallery-item" data-category="events">
+                    <img src="static/images/ino1.jpg" alt="Inaugural Lecture 2025" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">2025 Inaugural Lecture</div>
+                        <div class="gallery-category">Events</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <img src="static/images/ino8.jpg" alt="Keynote Address" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Keynote Address by Rev. Fr. Prof. Kanu</div>
+                        <div class="gallery-category">Events</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <img src="static/images/ino3.jpg" alt="Academic Gathering" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Academic Community Engagement</div>
+                        <div class="gallery-category">Events</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <img src="static/images/imass17.jpg" alt="Inaugural Mass" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Inaugural Mass & Lecture</div>
+                        <div class="gallery-category">Events</div>
+                    </div>
+                </div>
+
+                <!-- Academic Images -->
+                <div class="gallery-item" data-category="academic">
+                    <img src="static/images/imass2.jpg" alt="Classroom Session" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Liturgical Celebrations</div>
+                        <div class="gallery-category">Academic</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="academic">
+                    <img src="static/images/imass19.jpg" alt="Library Study" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Study Session</div>
+                        <div class="gallery-category">Academic</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="academic">
+                    <img src="static/images/ino7.jpg" alt="Research Discussion" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Research Discussion</div>
+                        <div class="gallery-category">Academic</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="academic">
+                    <img src="static/images/inn.jpg" alt="Graduation Ceremony" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Inaugural Lecture</div>
+                        <div class="gallery-category">Academic</div>
+                    </div>
+                </div>
+
+                <!-- Community Images -->
+                <div class="gallery-item" data-category="community">
+                    <img src="static/images/imass15.jpg" alt="Student Community" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Student Community Gathering</div>
+                        <div class="gallery-category">Community</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="community">
+                    <img src="static/images/ino9.jpg" alt="Institute Event" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Institute's Social Event</div>
+                        <div class="gallery-category">Community</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="community">
+                    <img src="static/images/imass12.jpg" alt="Philosophy Symposium" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Inaugural Lecture</div>
+                        <div class="gallery-category">Community</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="community">
+                    <img src="static/images/imass15.jpg" alt="Community Service" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Community Service Activity</div>
+                        <div class="gallery-category">Community</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+                        aria-label="Close" style="z-index: 1;"></button>
+                    <img src="" alt="" class="lightbox-img" id="lightboxImage">
+                    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="lightbox-caption">
+                        <div class="lightbox-title" id="lightboxTitle"></div>
+                        <p class="lightbox-description" id="lightboxDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-column">
+                        <h3>GET IN TOUCH</h3>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> +2347031828531, +2348030593538</p>
+                            <p><i class="fas fa-envelope"></i> rector@aimakurdi.ng</p>
+                            <p><i class="fas fa-globe"></i> www.aimakurdi.ng</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Otukpo Road, P.O Box 584, Makurdi</p>
+                        </div>
+
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-column">
+                        <h3>USEFUL LINKS</h3>
+                        <ul class="useful-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="academics.html">Academics</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                            <li><a href="e-journal.html">E-Journal</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="footer-column">
+                        <h3>NEWSLETTER</h3>
+                        <p>Stay updated with our latest news and announcements.</p>
+                        <form class="d-flex">
+                            <input type="email" class="form-control me-2" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary-custom"><i
+                                    class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Augustinian Institute, Makurdi. All Rights Reserved.</p>
+                <p>Powered by AI ICT Center</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Gallery Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Lightbox functionality
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDescription = document.getElementById('lightboxDescription');
+            const lightboxPrev = document.getElementById('lightboxPrev');
+            const lightboxNext = document.getElementById('lightboxNext');
+
+            let currentImageIndex = 0;
+            const galleryImages = Array.from(galleryItems);
+
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function () {
+                    const img = this.querySelector('.gallery-img');
+                    const title = this.querySelector('.gallery-title').textContent;
+                    const category = this.querySelector('.gallery-category').textContent;
+
+                    lightboxImage.src = img.src;
+                    lightboxTitle.textContent = title;
+                    lightboxDescription.textContent = category;
+
+                    currentImageIndex = index;
+                    imageModal.show();
+                });
+            });
+
+            // Navigation in lightbox
+            lightboxPrev.addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                updateLightboxImage();
+            });
+
+            lightboxNext.addEventListener('click', function () {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                updateLightboxImage();
+            });
+
+            function updateLightboxImage() {
+                const item = galleryImages[currentImageIndex];
+                const img = item.querySelector('.gallery-img');
+                const title = item.querySelector('.gallery-title').textContent;
+                const category = item.querySelector('.gallery-category').textContent;
+
+                lightboxImage.src = img.src;
+                lightboxTitle.textContent = title;
+                lightboxDescription.textContent = category;
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                if (document.getElementById('imageModal').classList.contains('show')) {
+                    if (e.key === 'ArrowLeft') {
+                        lightboxPrev.click();
+                    } else if (e.key === 'ArrowRight') {
+                        lightboxNext.click();
+                    } else if (e.key === 'Escape') {
+                        imageModal.hide();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

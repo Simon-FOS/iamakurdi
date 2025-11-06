@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary-blue: #26308e;
@@ -19,7 +22,7 @@
             --light-blue: #eef0ff;
             --dark-blue: #1a236e;
         }
-        
+
         body {
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
@@ -27,7 +30,12 @@
             background-color: var(--white);
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
         }
@@ -73,13 +81,13 @@
             color: #e8e8e8;
             margin-bottom: 0;
         }
-        
+
         /* Navigation */
         .main-navbar {
             background-color: var(--dark-blue);
             padding: 0;
         }
-        
+
         .navbar-nav .nav-link {
             color: var(--white);
             font-weight: 500;
@@ -87,13 +95,13 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
             color: var(--grey);
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
@@ -104,21 +112,21 @@
             background-color: var(--white);
             transition: width 0.3s ease;
         }
-        
+
         .navbar-nav .nav-link:hover::after,
         .navbar-nav .nav-link.active::after {
             width: calc(100% - 40px);
         }
-        
+
         .navbar-toggler {
             border: 1px solid rgba(255, 255, 255, 0.5);
             padding: 5px 10px;
         }
-        
+
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
-        
+
         /* Hero Section */
         .about-hero-section {
             position: relative;
@@ -132,47 +140,54 @@
             text-align: center;
             color: var(--white);
         }
-        
+
         .about-hero-content {
             max-width: 800px;
             padding: 0 20px;
             animation: fadeIn 1.5s ease;
         }
-        
+
         .about-hero-content h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             line-height: 1.3;
         }
-        
+
         .about-hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             opacity: 0.9;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         /* Sections */
         .section-padding {
             padding: 80px 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 50px;
             position: relative;
         }
-        
+
         .section-title h2 {
             font-size: 2rem;
             color: var(--primary-blue);
             display: inline-block;
         }
-        
+
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -183,12 +198,12 @@
             height: 3px;
             background-color: var(--primary-blue);
         }
-        
+
         /* About Content Section */
         .about-content-section {
             background-color: var(--light-blue);
         }
-        
+
         .about-image img {
             width: 100%;
             height: auto;
@@ -196,21 +211,22 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.5s ease;
         }
-        
+
         .about-image:hover img {
             transform: scale(1.03);
         }
-        
+
         .about-text p {
             margin-bottom: 20px;
         }
-        
+
         /* Mission & Vision Section */
         .mission-vision-section {
             background-color: var(--white);
         }
-        
-        .mission-card, .vision-card {
+
+        .mission-card,
+        .vision-card {
             background-color: var(--light-blue);
             border-radius: 8px;
             padding: 30px;
@@ -218,22 +234,24 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
-        
-        .mission-card:hover, .vision-card:hover {
+
+        .mission-card:hover,
+        .vision-card:hover {
             transform: translateY(-10px);
         }
-        
-        .mission-icon, .vision-icon {
+
+        .mission-icon,
+        .vision-icon {
             font-size: 2.5rem;
             color: var(--primary-blue);
             margin-bottom: 20px;
         }
-        
+
         /* Values Section */
         .values-section {
             background-color: var(--light-blue);
         }
-        
+
         .value-card {
             text-align: center;
             padding: 30px 20px;
@@ -243,22 +261,22 @@
             transition: transform 0.3s ease;
             height: 100%;
         }
-        
+
         .value-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .value-icon {
             font-size: 2.5rem;
             color: var(--primary-blue);
             margin-bottom: 20px;
         }
-        
+
         /* Leadership Section */
         .leadership-section {
             background-color: var(--white);
         }
-        
+
         .leader-card {
             text-align: center;
             padding: 30px 20px;
@@ -268,11 +286,11 @@
             transition: transform 0.3s ease;
             height: 100%;
         }
-        
+
         .leader-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .leader-image {
             width: 150px;
             height: 150px;
@@ -281,18 +299,18 @@
             margin: 0 auto 20px;
             border: 5px solid var(--primary-blue);
         }
-        
+
         /* History Section */
         .history-section {
             background-color: var(--light-blue);
         }
-        
+
         .timeline {
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .timeline::after {
             content: '';
             position: absolute;
@@ -303,14 +321,14 @@
             left: 50%;
             margin-left: -3px;
         }
-        
+
         .timeline-item {
             padding: 10px 40px;
             position: relative;
             width: 50%;
             box-sizing: border-box;
         }
-        
+
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -323,15 +341,15 @@
             border-radius: 50%;
             z-index: 1;
         }
-        
+
         .left {
             left: 0;
         }
-        
+
         .right {
             left: 50%;
         }
-        
+
         .left::before {
             content: " ";
             height: 0;
@@ -344,7 +362,7 @@
             border-width: 10px 0 10px 10px;
             border-color: transparent transparent transparent var(--primary-blue);
         }
-        
+
         .right::before {
             content: " ";
             height: 0;
@@ -357,11 +375,11 @@
             border-width: 10px 10px 10px 0;
             border-color: transparent var(--primary-blue) transparent transparent;
         }
-        
+
         .right::after {
             left: -13px;
         }
-        
+
         .timeline-content {
             padding: 20px 30px;
             background-color: var(--white);
@@ -369,42 +387,42 @@
             border-radius: 6px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         /* Stats Section */
         .stats-section {
             background-color: var(--primary-blue);
             color: var(--white);
         }
-        
+
         .stat-item {
             text-align: center;
             padding: 20px;
         }
-        
+
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
-        
+
         .stat-text {
             font-size: 1.2rem;
         }
-        
+
         /* Footer */
         .main-footer {
             background-color: #1a1a2e;
             color: var(--white);
             padding-top: 60px;
         }
-        
+
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
         }
-        
+
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -414,48 +432,48 @@
             height: 2px;
             background-color: var(--primary-blue);
         }
-        
+
         .contact-info p {
             margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
         }
-        
+
         .contact-info i {
             margin-right: 10px;
             color: var(--primary-blue);
             width: 20px;
         }
-        
+
         .useful-links {
             list-style: none;
             padding-left: 0;
         }
-        
+
         .useful-links li {
             margin-bottom: 10px;
         }
-        
+
         .useful-links a {
             color: var(--grey);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .useful-links a:hover {
             color: var(--white);
         }
-        
+
         .newsletter p {
             margin-bottom: 20px;
         }
-        
+
         .social-icons {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-icons a {
             display: flex;
             align-items: center;
@@ -469,12 +487,12 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
         }
-        
+
         .social-icons a:hover {
             background-color: var(--primary-blue);
             transform: translateY(-5px);
         }
-        
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding: 20px 0;
@@ -483,81 +501,83 @@
             font-size: 0.9rem;
             margin-top: 40px;
         }
-        
+
         /* Responsive Adjustments */
         @media (max-width: 992px) {
             .institute-title h1 {
                 font-size: 1.7rem;
             }
-            
+
             .logo-container img {
                 height: 80px;
             }
-            
+
             .timeline::after {
                 left: 31px;
             }
-            
+
             .timeline-item {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
             }
-            
+
             .timeline-item::before {
                 left: 60px;
                 border: medium solid var(--primary-blue);
                 border-width: 10px 10px 10px 0;
                 border-color: transparent var(--primary-blue) transparent transparent;
             }
-            
-            .left::after, .right::after {
+
+            .left::after,
+            .right::after {
                 left: 18px;
             }
-            
+
             .right {
                 left: 0%;
             }
         }
-        
+
         @media (max-width: 768px) {
             .institute-title h1 {
                 font-size: 1.5rem;
             }
-            
+
             .institute-title p {
                 font-size: 0.8rem;
             }
-            
+
             .logo-container img {
                 height: 70px;
             }
-            
+
             .header-buttons {
                 justify-content: center;
                 margin-top: 15px;
             }
-            
+
             .about-hero-content h2 {
                 font-size: 2rem;
             }
-            
+
             .about-hero-content p {
                 font-size: 1rem;
             }
         }
-        
+
         @media (max-width: 576px) {
             .section-padding {
                 padding: 60px 0;
             }
-            
+
             .section-title h2 {
                 font-size: 1.7rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- ===== HEADER ===== -->
     <header>
@@ -582,7 +602,8 @@
                     <!-- Right Logo -->
                     <div class="col-md-3 col-4 text-end">
                         <div class="logo-container">
-                            <img src="static/images/mologo.png" alt="Rev. Fr. Moses Orshio Adasu University Logo" loading="lazy">
+                            <img src="static/images/mologo.png" alt="Rev. Fr. Moses Orshio Adasu University Logo"
+                                loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -592,26 +613,45 @@
         <!-- ===== NAVIGATION ===== -->
         <nav class="navbar navbar-expand-lg main-navbar" aria-label="Primary Navigation">
             <div class="container">
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
-                        <li class="nav-item"><a class="nav-link" href="e-resources.html">E-Resources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="academics.html" id="academicsDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Academics
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+                                <li><a class="dropdown-item" href="academics.html#department">Department of
+                                        Philosophy</a></li>
+                                <li><a class="dropdown-item" href="academics.html#programmes">Academic Programmes</a>
+                                </li>
+                                <li><a class="dropdown-item" href="academics.html#courses">Course Structure</a></li>
+                                <li><a class="dropdown-item" href="academics.html#admission">Admission Requirements</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="e-journal.html">E-Journal</a></li>
                         <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     </ul>
 
                     <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-primary text-white px-4 py-2" style="background-color: #0056b3; border-color: #004a9f;">
-                            Portal
-                        </a>
-                        <a href="#" class="btn btn-outline-light px-4 py-2" style="color: #0056b3; border: 2px solid #0056b3;">
+                        <a href="#" class="btn btn-primary text-white px-4 py-2"
+                            style="background-color: #0056b3; border-color: #004a9f;">
                             E-Library
+                        </a>
+                        <a href="https://www.aimakurdi.ng:2096/cpsess8788782269/3rdparty/roundcube/"
+                            class="btn btn-outline-light px-4 py-2" style="color: #0056b3; border: 2px solid #0056b3;">
+                            Emails
                         </a>
                     </div>
                 </div>
@@ -633,18 +673,35 @@
             <div class="section-title">
                 <h2>Our Story</h2>
             </div>
-            
+
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="about-text">
-                        <p>The Augustinian Institute Makurdi traces its origin to the 2012 Provincial Chapter of the Order of Saint Augustine, Province of Nigeria, where the vision of establishing a centre for higher learning rooted in Augustinian spirituality was formally conceived and approved. Though academic activities began proper in 2014. The Chapter discerned the need for an academic institution that would promote the Catholic intellectual tradition, foster philosophical and moral formation, and serve as a platform for the integration of faith and reason in contemporary society.
- </p>
-                        <p>Responding to this inspiration, the Province initiated plans for an institute that would not only train candidates for the priesthood and religious life but also serve the wider community by offering programmes in philosophy, ethics, and professional education guided by Catholic values. The project was entrusted to the Augustinian community in Makurdi, under the pastoral guidance of the Provincial Council, which provided the spiritual, intellectual, and material foundations for its realization.
- </p>
-                        <p>Over the years, the Institute has grown steadily in its academic structure, departmental development, and institutional governance. Its affiliation to the Benue State University has further strengthened its academic credibility and ensured conformity with national educational standards, while remaining faithful to the Church’s teaching and the Augustinian charism of unity in truth and charity.
- </p>
-                        <p>Today, the Augustinian Institute, Makurdi stands as a centre of excellence in philosophical and professional education, dedicated to forming men and women who seek wisdom through faith, reason, and service to God and humanity. </p>
-                        
+                        <p>The Augustinian Institute Makurdi traces its origin to the 2012 Provincial Chapter of the
+                            Order of Saint Augustine, Province of Nigeria, where the vision of establishing a centre for
+                            higher learning rooted in Augustinian spirituality was formally conceived and approved.
+                            Though academic activities began proper in 2014. The Chapter discerned the need for an
+                            academic institution that would promote the Catholic intellectual tradition, foster
+                            philosophical and moral formation, and serve as a platform for the integration of faith and
+                            reason in contemporary society.
+                        </p>
+                        <p>Responding to this inspiration, the Province initiated plans for an institute that would not
+                            only train candidates for the priesthood and religious life but also serve the wider
+                            community by offering programmes in philosophy, ethics, and professional education guided by
+                            Catholic values. The project was entrusted to the Augustinian community in Makurdi, under
+                            the pastoral guidance of the Provincial Council, which provided the spiritual, intellectual,
+                            and material foundations for its realization.
+                        </p>
+                        <p>Over the years, the Institute has grown steadily in its academic structure, departmental
+                            development, and institutional governance. Its affiliation to the Benue State University has
+                            further strengthened its academic credibility and ensured conformity with national
+                            educational standards, while remaining faithful to the Church’s teaching and the Augustinian
+                            charism of unity in truth and charity.
+                        </p>
+                        <p>Today, the Augustinian Institute, Makurdi stands as a centre of excellence in philosophical
+                            and professional education, dedicated to forming men and women who seek wisdom through
+                            faith, reason, and service to God and humanity. </p>
+
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -662,7 +719,7 @@
             <div class="section-title">
                 <h2>Our Mission & Vision</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-6 mb-4">
                     <div class="mission-card">
@@ -670,36 +727,46 @@
                             <i class="fas fa-bullseye"></i>
                         </div>
                         <h3 class="text-center">Our Mission</h3>
-                        <p>To provide holistic education that integrates academic excellence with spiritual formation, moral integrity, and social responsibility, rooted in the Augustinian tradition of seeking truth through faith and reason.</p>
-                        <p>We are committed to nurturing individuals who are not only intellectually competent but also spiritually mature, ethically grounded, and prepared to serve their communities with wisdom and compassion.</p>
+                        <p>To provide holistic education that integrates academic excellence with spiritual formation,
+                            moral integrity, and social responsibility, rooted in the Augustinian tradition of seeking
+                            truth through faith and reason.</p>
+                        <p>We are committed to nurturing individuals who are not only intellectually competent but also
+                            spiritually mature, ethically grounded, and prepared to serve their communities with wisdom
+                            and compassion.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6 mb-4">
                     <div class="vision-card">
                         <div class="vision-icon text-center">
                             <i class="fas fa-eye"></i>
                         </div>
                         <h3 class="text-center">Our Vision</h3>
-                        <p>The Institute envisions a community where truth and love unite faith and reason, forming persons who seek wisdom, justice, and peace in service to God and humanity.
-Article 3: Mission
-The mission of the Institute is to:
-a. Promote philosophical and professional education imbued with Catholic values;
-b. Foster the integration of faith and reason;
-c. Form morally responsible leaders inspired by the Gospel;
-d. Advance knowledge through teaching, research, and community service;
-e. Preserve and transmit the Catholic intellectual heritage in dialogue with contemporary thought.
-</p>
-<p>PART II – OBJECTIVES AND PRINCIPLES
-</p>
-<p>Article 4: Objectives
-</p>
-<p>The objectives of the Institute shall include:
-<br>1. The advancement of learning and the search for truth in the light of faith.
-<br>2. The education of students to think critically and act ethically.
-<br>3. The promotion of philosophical research, particularly in the Augustinian and Thomistic traditions.
-<br>4. The preparation of graduates capable of contributing to the moral and social development of Nigeria and the world.
-<br>5. The cultivation of a community of scholars marked by charity, humility, and intellectual rigor.</p>
+                        <p>The Institute envisions a community where truth and love unite faith and reason, forming
+                            persons who seek wisdom, justice, and peace in service to God and humanity.
+                            Article 3: Mission
+                            The mission of the Institute is to:
+                            a. Promote philosophical and professional education imbued with Catholic values;
+                            b. Foster the integration of faith and reason;
+                            c. Form morally responsible leaders inspired by the Gospel;
+                            d. Advance knowledge through teaching, research, and community service;
+                            e. Preserve and transmit the Catholic intellectual heritage in dialogue with contemporary
+                            thought.
+                        </p>
+                        <p>PART II – OBJECTIVES AND PRINCIPLES
+                        </p>
+                        <p>Article 4: Objectives
+                        </p>
+                        <p>The objectives of the Institute shall include:
+                            <br>1. The advancement of learning and the search for truth in the light of faith.
+                            <br>2. The education of students to think critically and act ethically.
+                            <br>3. The promotion of philosophical research, particularly in the Augustinian and
+                            Thomistic traditions.
+                            <br>4. The preparation of graduates capable of contributing to the moral and social
+                            development of Nigeria and the world.
+                            <br>5. The cultivation of a community of scholars marked by charity, humility, and
+                            intellectual rigor.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -712,7 +779,7 @@ e. Preserve and transmit the Catholic intellectual heritage in dialogue with con
             <div class="section-title">
                 <h2>Our Core Values</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="value-card">
@@ -720,57 +787,63 @@ e. Preserve and transmit the Catholic intellectual heritage in dialogue with con
                             <i class="fas fa-search"></i>
                         </div>
                         <h3>Truth</h3>
-                        <p>We pursue truth through rigorous intellectual inquiry, critical thinking, and open dialogue, guided by both faith and reason.</p>
+                        <p>We pursue truth through rigorous intellectual inquiry, critical thinking, and open dialogue,
+                            guided by both faith and reason.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <h3>Community</h3>
-                        <p>We foster a supportive learning community where relationships are built on mutual respect, collaboration, and shared purpose.</p>
+                        <p>We foster a supportive learning community where relationships are built on mutual respect,
+                            collaboration, and shared purpose.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="fas fa-heart"></i>
                         </div>
                         <h3>Love of Wisdom</h3>
-                        <p>We cultivate a lifelong love of learning and wisdom that transcends academic knowledge to encompass spiritual and moral understanding.</p>
+                        <p>We cultivate a lifelong love of learning and wisdom that transcends academic knowledge to
+                            encompass spiritual and moral understanding.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="fas fa-hand-holding-heart"></i>
                         </div>
                         <h3>Service</h3>
-                        <p>We prepare students for lives of meaningful service, leadership, and social responsibility in their communities and professions.</p>
+                        <p>We prepare students for lives of meaningful service, leadership, and social responsibility in
+                            their communities and professions.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="fas fa-pray"></i>
                         </div>
                         <h3>Spiritual Formation</h3>
-                        <p>We nurture spiritual growth through prayer, reflection, and engagement with the rich traditions of Catholic and Augustinian spirituality.</p>
+                        <p>We nurture spiritual growth through prayer, reflection, and engagement with the rich
+                            traditions of Catholic and Augustinian spirituality.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <h3>Excellence</h3>
-                        <p>We strive for excellence in all aspects of our educational mission, from teaching and research to student formation and community engagement.</p>
+                        <p>We strive for excellence in all aspects of our educational mission, from teaching and
+                            research to student formation and community engagement.</p>
                     </div>
                 </div>
             </div>
@@ -783,32 +856,35 @@ e. Preserve and transmit the Catholic intellectual heritage in dialogue with con
             <div class="section-title">
                 <h2>Our Leadership</h2>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="leader-card">
                         <img src="/static/images/prov.jpg" alt="Rector" class="leader-image">
                         <h3>Rev. Fr. Professor Ikechukwu Anthony Kanu, OSA</h3>
                         <p class="text-primary fw-bold">Prior Provincial/Proprietor</p>
-                        <p>Distinguished scholar, philosopher, and Augustinian priest with extensive experience in academic leadership and spiritual formation.</p>
+                        <p>Distinguished scholar, philosopher, and Augustinian priest with extensive experience in
+                            academic leadership and spiritual formation.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="leader-card">
                         <img src="/static/images/rector.jpg" alt="Vice Rector" class="leader-image">
                         <h3>Rev. Fr. Dr. Gabriel Felix Zombobah, OSA</h3>
                         <p class="text-primary fw-bold">Rector</p>
-                        <p>Experienced educator and administrator dedicated to academic excellence and student development.</p>
+                        <p>Experienced educator and administrator dedicated to academic excellence and student
+                            development.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="leader-card">
                         <img src="/static/images/rect.jpg" alt="Registrar" class="leader-image">
                         <h3>Rev. Fr. Dr. Peter Maigari, OSA</h3>
                         <p class="text-primary fw-bold">H.O.D</p>
-                        <p>Administrative professional with extensive experience in educational management and institutional operations.</p>
+                        <p>Administrative professional with extensive experience in educational management and
+                            institutional operations.</p>
                     </div>
                 </div>
             </div>
@@ -821,42 +897,48 @@ e. Preserve and transmit the Catholic intellectual heritage in dialogue with con
             <div class="section-title">
                 <h2>Our History</h2>
             </div>
-            
+
             <div class="timeline">
                 <div class="timeline-item left">
                     <div class="timeline-content">
                         <h3>2010</h3>
-                        <p>Establishment of Augustinian Institute, Makurdi with a vision to provide quality education rooted in Catholic and Augustinian traditions.</p>
+                        <p>Establishment of Augustinian Institute, Makurdi with a vision to provide quality education
+                            rooted in Catholic and Augustinian traditions.</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="timeline-content">
                         <h3>2012</h3>
-                        <p>Affiliation with Rev. Fr. Moses Orshio Adasu University (formerly Benue State University, Makurdi) to offer accredited academic programs.</p>
+                        <p>Affiliation with Rev. Fr. Moses Orshio Adasu University (formerly Benue State University,
+                            Makurdi) to offer accredited academic programs.</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="timeline-content">
                         <h3>2015</h3>
-                        <p>Expansion of academic programs to include specialized courses in Philosophy, Theology, and Ethics.</p>
+                        <p>Expansion of academic programs to include specialized courses in Philosophy, Theology, and
+                            Ethics.</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="timeline-content">
                         <h3>2018</h3>
-                        <p>Establishment of the Institute's E-Library and digital learning resources to enhance academic research and study.</p>
+                        <p>Establishment of the Institute's E-Library and digital learning resources to enhance academic
+                            research and study.</p>
                     </div>
                 </div>
                 <div class="timeline-item left">
                     <div class="timeline-content">
                         <h3>2020</h3>
-                        <p>Launch of community outreach programs and partnerships with local organizations to extend the Institute's impact beyond the campus.</p>
+                        <p>Launch of community outreach programs and partnerships with local organizations to extend the
+                            Institute's impact beyond the campus.</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
                     <div class="timeline-content">
                         <h3>2023</h3>
-                        <p>Introduction of online learning platforms and hybrid educational models to adapt to changing educational landscapes.</p>
+                        <p>Introduction of online learning platforms and hybrid educational models to adapt to changing
+                            educational landscapes.</p>
                     </div>
                 </div>
             </div>
@@ -908,7 +990,7 @@ e. Preserve and transmit the Catholic intellectual heritage in dialogue with con
                             <p><i class="fas fa-globe"></i> www.aimakurdi.ng</p>
                             <p><i class="fas fa-map-marker-alt"></i> Otukpo Road, P.O Box 584, Makurdi</p>
                         </div>
-                        
+
                         <div class="social-icons">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -918,7 +1000,7 @@ e. Preserve and transmit the Catholic intellectual heritage in dialogue with con
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="footer-column">
                         <h3>USEFUL LINKS</h3>
@@ -932,19 +1014,20 @@ e. Preserve and transmit the Catholic intellectual heritage in dialogue with con
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-12 mb-4">
                     <div class="footer-column">
                         <h3>NEWSLETTER</h3>
                         <p>Stay updated with our latest news and announcements.</p>
                         <form class="d-flex">
                             <input type="email" class="form-control me-2" placeholder="Your Email Address" required>
-                            <button type="submit" class="btn btn-primary-custom"><i class="fas fa-paper-plane"></i></button>
+                            <button type="submit" class="btn btn-primary-custom"><i
+                                    class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Augustinian Institute, Makurdi. All Rights Reserved.</p>
                 <p>Powered by AI ICT Center</p>
@@ -955,4 +1038,5 @@ e. Preserve and transmit the Catholic intellectual heritage in dialogue with con
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
